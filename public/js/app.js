@@ -12,7 +12,7 @@ weatherForm.addEventListener('submit', (e) => {
     // }
     
     const address = search.value;
-    fetch('weather?address='+address).then((response) => {
+    fetch('https://vaishali-weather--app.herokuapp.com/weather?address='+address).then((response) => {
         response.json().then((data) => {
             if(data.error){
                 msg.textContent = data.error;
