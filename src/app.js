@@ -6,6 +6,7 @@ console.log(__dirname);
 console.log(__filename);
 console.log(path.join(__dirname, '..'));
 
+const port = process.env.port || 3000;
 const app = express();
 const publicPathDir = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -105,6 +106,6 @@ app.get('*', (req, res) => {
     })
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000.');
+app.listen(port, () => {
+    console.log('Server is running on port '+port);
 })
